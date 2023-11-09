@@ -58,3 +58,6 @@ bind \ek history-search-backward
 
 bind \el forward-bigword
 bind \eh backward-kill-bigword
+
+# Aliases
+alias dops "docker ps --format \"table {{.Names}}\t{{.ID}}\t{{.Status}}\t{{.Image}}\""
