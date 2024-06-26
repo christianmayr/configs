@@ -43,10 +43,7 @@ function fish_prompt --description 'Prompt ausgeben'
     end
 
     set -l prompt_line (string join '' $user ' at ' $host ' in ' $cwd $vcs ' ' $exit_status)
-    set -l prompt_len (string length --visible $prompt_line)
-    if test $prompt_len -gt $COLUMNS
-        set prompt_line $cwd $vcs ' ' $exit_status
-    end
+    set -l prompt_len (string length $prompt_line)
 
     echo -s $line
     echo -s $prompt_line
