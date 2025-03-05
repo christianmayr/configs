@@ -7,8 +7,11 @@ function fish_greeting
 end
 
 function fish_prompt --description 'Prompt ausgeben'
+    # Needs to be first in the prompt
     set -l last_status $status
-    set -l normal (set_color normal)
+
+    # Set colors
+    set -l normal (set_color $fish_color_normal)
     set -l user_color (set_color cyan)
     set -l host_color (set_color green)
     set -l cwd_color (set_color $fish_color_cwd)
@@ -50,11 +53,19 @@ function fish_prompt --description 'Prompt ausgeben'
     echo -n -s $suffix ' '
 end
 
-bind \ej history-search-forward
-bind \ek history-search-backward
-
-bind \el forward-bigword
-bind \eh backward-kill-bigword
-
 # Aliases
+alias upup "sudo apt update && sudo apt upgrade -y"
 alias dops "docker ps --format \"table {{.Names}}\t{{.ID}}\t{{.Status}}\t{{.Image}}\""
+alias lls "ls -l"
+alias pdf xdg-open
+alias vim nvim
+
+set PATH $PATH /home/christian/.local/bin
+set PATH $PATH /home/christian/.rvm/bin
+
+# Binds
+fish_default_key_bindings
+bind \ef forward-bigword
+
+# Environment
+export EDITOR="/usr/bin/nvim"
