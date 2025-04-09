@@ -2,7 +2,7 @@
 
 for script in ./install_*.sh; do
 	echo
-	echo "Running $script"
+	echo "### Running $script ###"
 	"$script"
 done
 
