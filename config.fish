@@ -59,6 +59,7 @@ alias dops "docker ps --format \"table {{.Names}}\t{{.ID}}\t{{.Status}}\t{{.Imag
 alias lls "ls -l"
 alias pdf xdg-open
 alias vim nvim
+alias dog "dig +noall +answer"
 
 set PATH $PATH /home/christian/.local/bin
 set PATH $PATH /home/christian/.rvm/bin
