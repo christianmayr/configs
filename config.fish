@@ -70,3 +70,6 @@ bind \ef forward-bigword
 
 # Environment
 export EDITOR="/usr/bin/nvim"
+if test -f ~/.config/fish/environment.fish
+    source ~/.config/fish/environment.fish
+end
