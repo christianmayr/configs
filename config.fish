@@ -10,6 +10,15 @@ function fish_prompt
     # Needs to be first in the prompt
     set -l last_status $status
 
+    # Set colors
+    set -l normal (set_color $fish_color_normal)
+    set -l user_color (set_color $fish_color_user)
+    set -l host_color (set_color $fish_color_host)
+    set -l cwd_color (set_color $fish_color_cwd)
+    set -l vcs_color (set_color $fish_color_command)
+    set -l error_color (set_color $fish_color_error)
+    set -l line_color (set_color $fish_color_gray)
+
     set -l line $line_color (string repeat -n $COLUMNS ─) $normal
     set -l user $user_color $USER $normal
     set -l host $host_color (prompt_hostname) $normal
